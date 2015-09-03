@@ -53,10 +53,10 @@ var myObj = { name: "TestObject", id: 1 };
 var mySecondObj = { name: "TestObject2", id: 2 };
 
 QUnit.test("tests - global function invoked with .apply scoped to TestObject1 and provided myObj.name(TestObject) and mySecondObject.name (TestObject2) as the array of parameters.", function (assert) {
-    assert.ok(doSomethingWithSomethingElse.apply(myObj, [myObj.name, mySecondObj.name]) === myObj.name, ".apply Succeeds!");
+    assert.ok(doSomethingWithSomethingElse.apply(myObj, [myObj.name, mySecondObj.name]), ".apply Succeeds!");
 });
 QUnit.test("tests - global function invoked with .apply scoped to TestObject2 and provided myObj.name (TestObject) and mySecondObject.name (TestObject2) as the array of parameters.", function (assert) {
-    assert.ok(doSomethingWithSomethingElse.apply(myObj, [myObj.name, mySecondObh.name]), ".apply succeeds");
+    assert.ok(doSomethingWithSomethingElse.apply(mySecondObj, [myObj.name, mySecondObj.name]), ".apply succeeds");
 });
 
 /*
