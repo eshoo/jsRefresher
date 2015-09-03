@@ -1,212 +1,273 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <title>Javascript Noodling</title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <link href="css/bootstrap-theme-spacelab.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
     <script src="js/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <h2>Areas of JS study, Refreshers</h2>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ol>
-                    <li>
-                        <b>Common Arrays</b><br>
-                        <ul>
-                            <li>
-                                <b>sort</b> - sorts array elements.
-                                <br><ol>
-                                    <li>
-                                        <em>Sorting Strings:</em><br />
-                                        <code><pre class="well">["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].sort();</pre></code><br />
-                                        - requires no compare function at all since string sorting is the default 
-                                        <br />
-                                        <a href="qTests.html">Try It</a>
-                                    </li>
-                                    <li>
-                                        <em>Sorting Numbers:</em><br />
-                                        <code>[9,5,2,1,22,40,21,19,10,23].sort(function(a,b) {return a-b;}); </code><br />
-                                        - requires a compare function since the values are numeric and cannot be accurately be sorted as strings.  
-                                        <br />
-                                        <a href="qTests.html">Try It</a>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <b>reverse</b> - reverse the order of the items in an array.<br>
-                                <ol>
-                                    <li>
-                                        Example: <br>
-                                            <code class="well">
-                                                ["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].reverse()===[ 'Grapes', 'Cherries','Peaches','Pears', 'Apples','Oranges' ]
-                                            </code>
-                                        <br />
-                                        <a href="qTests.html">Try It</a>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <b>shift</b> - removes the first item in an array and returns it
-                                <br />
-                                    <code class="well">
-                                        ["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].shift()==="Oranges"
-                                    </code>
-                                <br />
-                                <a href="qTests.html">Try It</a>
-                            </li>
-                            <li>
-                                <b>unshift</b> - adds new elements to the beginning of an array and returns its length:
-                                <br />
-                                <code class="well">["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].unshift("Mango","Pineapple")===8</code>
-                                <br />
-                                <a href="qTests.html">Try It</a>
-                            </li>
-                            <li>
-                                <b>slice</b> - Selects a part of an array, and returns the new array:<br />
-                                Example: <code class="well">
-                                	["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].slice(1,3)===["Apples","Pears"]</code>
-                                <br />
-                                <a href="qTests.html">Try It</a>
-                            </li>
-                            <li>
-                                <b>splice</b> - Adds/Removes elements from an array <br />
-                                Example: <code class="well">["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].splice(2,0,"Lemon","Kiwi")===["Oranges", "Apples","Lemon","Kiwi","Pears","Peaches","Cherries","Grapes"]</code>
-                                    <br /><a href="qTests.html">Try It</a>
-                            </li>
-                            <li>
-                                <b>concat</b> - Joins two or more arrays, and returns a copy of the joined arrays as a <em><u>New Array</u></em>.<br />
-                                Example:
-                                    <code class="well">["Apples","Pears"].concat(["Peaches","Cherries"])===["Apples","Pears","Peaches","Cherries"]</code>
-                                    <br /><a href="qTests.html">Try It</a>
-                                </span>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <b>Function Invocation</b> - Call, Apply and Bind
-                        <br />
-                        First it may be helpful to provide an ordinary, run-of-the-mill function invocation.<br>
-                        For example:<br />
-	<pre class="well"><code>var myObj=
-		{name: "TestObject",
-		 doSomething: function() { return this.name; }, 
-		 id: 1}.doSomething();</code></pre>
-         <br /> The above creates an object literal myObj with properties of name and id and a method of doSomething.
-         <br />
+<div class="container">
+<div class="row"><div class="col-lg-push-11 col-lg-offset-1"><h2>Areas of JS study, Refreshers</h2></div></div>
+<div class="row">
+<div class="col-lg-12">
+<ol>
+<li>
+<b>Common Arrays</b><br>
+<ul>
+<li>
+<b>sort</b> - sorts array elements.
+<br />
+<ol>
+<li>
+<em>Sorting Strings:</em><br />
+    <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].sort();</code></pre><br />
+    <sub>*requires no compare function at all since string sorting is the default</sub>
+    <a href="qTests.html">Try It</a>
+</li>
+<li>
+<em>Sorting Numbers:</em><br />
+<code><pre class="well">[9,5,2,1,22,40,21,19,10,23].sort(function(a,b) {return a-b;}); </pre></code>
+<sub>*requires a compare function since the values are numeric and cannot be accurately be sorted as strings.</sub>
+<a href="qTests.html">Try It</a>
+</li>
+</ol>
+</li>
+<li>
+<b>reverse</b> - reverse the order of the items in an array.<br>
+<ol>
+<li>
+Example: <br>
+<pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].reverse()===[ 'Grapes', 'Cherries','Peaches','Pears', 'Apples','Oranges' ]</code></pre>
+<br />
+<a href="qTests.html">Try It</a>
+</li>
+</ol>
+</li>
+<li>
+<b>shift</b> - removes the first item in an array and returns it
+<br />
+<pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].shift()==="Oranges"</code></pre>
+<br />
+<a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>unshift</b> - adds new elements to the beginning of an array and returns its length:
+<br />
+<pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].unshift("Mango","Pineapple")===8</code></pre>
+<br />
+<a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>slice</b> - Selects a part of an array, and returns the new array:<br />
+Example: <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].slice(1,3)===["Apples","Pears"]</code></pre>
+<br />
+<a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>splice</b> - Adds/Removes elements from an array <br />
+Example: <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].splice(2,0,"Lemon","Kiwi")===["Oranges", "Apples","Lemon","Kiwi","Pears","Peaches","Cherries","Grapes"]</code></pre>
+<br /><a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>concat</b> - Joins two or more arrays, and returns a copy of the joined arrays as a <em><u>New Array</u></em>.<br />
+Example:
+<pre class="well"><code>["Apples","Pears"].concat(["Peaches","Cherries"])===["Apples","Pears","Peaches","Cherries"]</code></pre>
+<br /><a href="qTests.html">Try It</a></li></ul></li>
+<li>
+<b>Function Invocation</b> - Call, Apply and Bind
+<br />
+First it may be helpful to provide an ordinary, run-of-the-mill function invocation.<br>
+For example:<br />
+ The following creates and assigns an object literal to var myObj.  Object contains properties of name and id and a method of doSomething.
+<br />
+<pre class="well"><code>var myObj = { 
+  name: "TestObject"
+, doSomething: function () { return this.name; }
+, id: 1 };
+//on btnClick of the following button, the following is to execute.
+alert(myObj.doSomething());</code>
 
-         <pre class="well"><code>var myObj = { name: "TestObject", 
-         doSomething: function () { return this.name; }, 
-         id: 1 };
-		//on btnClick of the following button, the following is to execute.
-alert(myObj.doSomething());</code></pre>
-        <script language="Javascript">
-        	var myObj = { name: "TestObject", doSomething: function () { return this.name; }, id: 1 };
-        </script>
-        <br />
-        <button onclick="alert(myObj.doSomething());" name="btnDoSomethin" class="btn-sm btn-primary">Test Me</button>
-                            
-                            <ul>
-                                <li>
-                                    <b>call</b> - method of function objects that excepts a context or this parameter value to be used as the this value within the scope of the function call.
-                                    <br />
-                                    To demonstrate call and apply, we'll borrow the object created in the previous simple example as so:
-                                    <br />
-                           
+<button onclick="alert({name:'TestObject', doSomething: function() { return this.name;}, id: 1 }.doSomething());" name="btnDoSomethin" class="btn-sm btn-primary">Click to run doSomething()</button></pre>
+<br />
+<ul>
+<li>
+<b>call - part I </b> - method of function object that excepts a context or parameter value to be used as the 'this' value within the scope of the function call.    
+    <p>
+        To demonstrate call and apply we'll borrow from the previous object only this time doSomething will be a global function and not an object method as before:<br />
 <pre class="well"><code>//this time the doSomething method is a global function.
-
 function doSomething() { return this.name; }
 var myFirstObject = { name: "TestObject", id: 1 };
 var mySecondObj = { name: "TestObject2", id: 2 };
-
 // invoke doSomething function in a global context:
 var result1=doSomething();
-
 // invoke doSomething using call and passing in a specific object which will standin for the this object.
 var result2=doSomething.call(myFirstObject);
 var result2=doSomething.call(mySecondObj);</code></pre>
+    </p>
+<p style="font-weight:600; font-size:larger">The following tests verify the values of result1, result2 and result3 based on the concepts demonstrated in the above code.</p>
+<ol>
+<li><button class="btn-sm btn-primary" onclick="alert(function () { return this.name; }());">result1</button> should be "" || undefined(depends)<br /><br /></li>
+<li><button class="btn-sm btn-primary" onclick="alert(function () { return this.name; }.call({ name: 'TestObject', id: 1 }));">result2</button> should be "TestObject"<br /><br /></li>
+<li><button class="btn-sm btn-primary" onclick="alert(function () { return this.name; }.call({ name: 'TestObject2', id: 2 }));">result3</button> should be "TestObject2"<br /><br /></li>
+</ol>
+    
+<br />
 
-                                    <br />
-                                    <script>
+</li>
+    <li>
+        <b>call - part II </b> - So far, I've demonstrated how to use .call function invocation with a function that doesn't expect to be called with any arguments.
+        In part II and again in the section that describes .apply, we need to look at the case of functions that do expect and/or require to be provided with parameter values, whether called directly or invoked using .call or .apply.
+        <p> First the example:</p>
+<pre class="well"><code>function payday(hrs,rate) {
+    this.cashonHand+=(hrs*rate)
+    return this.name + " now has " + this.cashonHand + " dollars on hand.";
+}
+var p1={name:"Fred", cashonHand: 39, job:{description: "Dish washer", hourlyRate: 8}, id: 1};
+var p2={name: "Jane", cashonHand: 57, job:{description: "Oracle DBA", hourlyRate: 76}, id: 2};
+var x=payday(40,p1.job.hourlyRate);
+//  value of x cannot be right, since the global 'this'.cashonHand property is undefined - as best the value of x may end up something like this: " now has NaN dollars on hand." //at best.
+//  now it should be the case that the global 'this' has a cashonHand value of !==undefined, this is not what we wanted at all. 
+// intead we want our working people, Fred and Jane to receive their pay, increasing their cashonHand values.  This is where call comes into play:
+var msg1=payday.call(p1,40,p1.hourlyRate);
+var msg2=payday.call(p2,40,p2.hourlyRate);
+// What are the expected values of msg1 and msg2 now?  What about p2.cashonHand? p1.cashonHand?
+</code></pre>
+<br />
+ <ol>
+ <li>
+    <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}(40,9));">I should misbehave</button><br />
+ </li>
+     <li>
+         <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}.call({name:'Fred', cashonHand: 39, job:{description: 'Dish washer', hourlyRate: 8}, id: 1},40,{name:'Fred', cashonHand: 39, job:{description: 'Dish washer', hourlyRate: 8}, id: 1}.job.hourlyRate));">Fred's finances.</button>
 
-                                        //this time the doSomething method is a global function.
-                                        function doSomething() { return this.name; }
+         <br />
+     </li><li>
+    <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}.call({name: 'Jane', job: {description:'Oracle Dba', hourlyRate: 76},cashonHand: 57, id:2},40,{name: 'Jane', job: {description:'Oracle Dba', hourlyRate: 76},cashonHand: 57, id:2}.job.hourlyRate));">Jane's finances.</button>
+         <br /></li></ol>
 
-                                        var myFirstObject = { name: "TestObject", id: 1 };
-                                        var mySecondObj = { name: "TestObject2", id: 2 };
+            </li>
+            <li><b>apply</b> - nearly identical to call.  The differrence between call and apply is that call invokes a function passing in comma seperated values to be used as function arguments, while apply accepts an array of arguments and uses them much like an ordinary function call's use of the arguments[] array.
+<pre class="well"><code>function payday(hrs,rate) {
+    this.cashonHand+=(hrs*rate)
+    this.hoursWorked=this.hoursWorked-hrs;
+    return this.name + " now has " + this.cashonHand + " dollars on hand and has a total of " + this.hoursWorked + " unpaid hours banked this period.";
+}
+var p1={name:"Fred", cashonHand: 39, job:{description: "Dish washer", hourlyRate: 8}, id: 1, hoursWorked: 43};
+var p2={name: "Jane", cashonHand: 57, job:{description: "Oracle DBA", hourlyRate: 76}, id: 2, hoursWorked: 59};
+var args1=[p1.hoursWorked,p1.hourlyRate];
+var args2=[40,p2.hourlyRate];
+var x=payday(40,p1.job.hourlyRate);
+//  value of x cannot be right, since the global 'this'.cashonHand property is undefined - as best the value of x may end up something like this: " now has NaN dollars on hand  and has a total of NaN unpaid hours banked this period." //at best.
+//  now it should be the case that the global 'this' has a cashonHand value of !==undefined, this is not what we wanted at all. 
+// intead we want our working people, Fred and Jane to receive their pay, increasing their cashonHand values.  This is where call comes into play:
+var msg1=payday.call(p1,40,p1.hourlyRate);
+var msg2=payday.call(p2,40,p2.hourlyRate);
+// What are the expected values of msg1 and msg2 now?  What about p2.cashonHand? p1.cashonHand?
+</code></pre><br />            
+</li>
+ <li><b>bind</b> - The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding 
+     any provided when the new function is called.<br />
+     <br /><b>Bind Scenerios </b>
+     <ul>
+         <li><b>Creating bound function</b> - Example usage:<pre class="well"><code>this.someVal=4; // creates a global someVal variable with a value of 4.
+             var bunkerObj= {
+                someVal: 25
+              , showVal: function() { return this.someVal; }
+             }                             
+             var f=bunkerObj.showVal;
+             bunkerObj.showVal(); //result is 25
+             f(); //result is 4 (unbound f has no context for 'this' so the global 'this' is used.)
+             var fbound=f.bind(bunkerObj);
+             fbound()===25; //f is now bound to be called always as if invoked in the context of bunkerObj</code></pre>
+            <br />
+            *TODO*
+         </li>
+         <li><b>Partial functions</b> - 
+         *TODO*
+         </li>
+     </ul>        
+    
+    </li>
+    
+    <li>
+        <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Function Invocation tests</button>
+    </li>
+</ul>
+</li>
+<li>
+    <b>Asynchrony and friends</b> - see <a href="http://www.quora.com/Whats-the-difference-between-a-promise-and-a-callback-in-Javascript">http://www.quora.com/Whats-the-difference-between-a-promise-and-a-callback-in-Javascript</a> for more info.
+<ul>
+<li>
+<b>Closures</b> - *TODO*
+    <pre class="well"><code>
+    </code></pre>
+<br /><a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>Callbacks</b> -  *TODO*
+<br /><a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>Promises</b> - a promise is a proxy for a value that may not be known at creation time.  *TODO*
+<br /><a href="qTests.html">Try It</a>
+</li>
+</ul>
+</li>
 
-                                        // invoke doSomething function in a global context:
-                                        var result1 = doSomething();
-                                        // invoke doSomething using call and passing in a specific object which will standin for the this object.
-                                        var result2 = doSomething.call(myFirstObject);
-                                        var result3 = doSomething.call(mySecondObj);
-                                    </script>
-                                    <br />
-                                    The following tests verify the values of result1, result2 and result3:<br>
-                                    <ol>
-                                        <li><button class="btn-sm btn-primary" onclick="alert(result1);">result1</button> should be "" || undefined(depends)<br /><br /></li>
-                                        <li><button class="btn-sm btn-primary" onclick="alert(result2);">result2</button> should be "TestObject"<br /><br /></li>
-                                        <li><button class="btn-sm btn-primary" onclick="alert(result3);">result3</button> should be "TestObject2"<br /><br /></li>
-                                    </ol>
-                                    <br />
-                                    The unit tests for these cases can be found 
-                                    <a href="qTests.html?module=Function%20Invocation%20goodness%20-%20%5BFunction%5D.call()">here</a>.
-                                </li>
-                                <li><b>apply</b></li>
-                                <li><b>bind</b></li>
-                            </ul>
-					</li>
-                    <li>
-                        Asynchrony and friends - see <a href="http://www.quora.com/Whats-the-difference-between-a-promise-and-a-callback-in-Javascript">http://www.quora.com/Whats-the-difference-between-a-promise-and-a-callback-in-Javascript</a> for more info.
-                        <ul>
-                            <li>
-                                <b>Closures</b>
-                                <br /><a href="qTests.html">Try It</a>
+<li>
+<b>More fun w/Arrays -  *TODO*</b>
+<ul>
+<li>
+<b>.forEach</b> -  *TODO*
+<br /><a href="qTests.html">Try It</a>
+</li>
+<li>
+<b>map</b> -  *TODO*
+<br /><a href="qTests.html">Try It</a>
+</li>
+    <li>
+        <b>reduce</b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
+    <li>
+        <b>reduceRight</b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
+    <li>
+        <b>filter</b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
+    <li>
+        <b>entries - </b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
+    <li>
+        <b>every - </b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
 
-                            </li>
-                            <li>
-                                <b>Callbacks</b>
-                                <br /><a href="qTests.html">Try It</a>
-                            </li>
-                            <li>
-                                <b>Promises</b> - a promise is a proxy for a value that may not be known at creation time.
-                                <br /><a href="qTests.html">Try It</a>
-                            </li>
+    <li>
+        <b>some - </b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
+    <li>
+        <b>keys</b> -  *TODO*
+        <br /><a href="qTests.html">Try It</a>
+    </li>
 
-                        </ul>
-                    </li>
+</ul>
+</li>
+<li><b>Prototypal inheritance</b> -  *TODO*</li>
+</ol>
+</div>
+</div>
+</div>
 
+<script src="js/jquery-1.10.2.js"></script>
 
-                    <li>
-                        <b>Fancier Arrays</b>
-                        <ul>
-                            <li>
-                                <b>.forEach</b>
-                                <br /><a href="qTests.html">Try It</a>
-                            </li>
-                            <li>
-                                <b>map</b>
-                                <br /><a href="qTests.html">Try It</a>
-                            </li>
-
-                            <li>
-                                <b>reduce</b>
-                                <br /><a href="qTests.html">Try It</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li><b>Prototypal inheritance</b></li>
-                </ol>            
-        	</div>
-        </div>
-     </div>
-
-    <script src="js/jquery-1.10.2.js"></script>
-
-    <script src="js/bootstrap.js"></script>
-    <script src="js/respond.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/respond.js"></script>
 </body>
 </html>
