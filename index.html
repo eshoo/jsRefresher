@@ -137,18 +137,15 @@ var msg2=payday.call(p2,40,p2.hourlyRate);
 <br />
  <ol>
  <li>
-    <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}(40,9));">I should misbehave</button><br />
+    <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}(40,9));">I should misbehave</button><br /><br />
  </li>
      <li>
-         <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}.call({name:'Fred', cashonHand: 39, job:{description: 'Dish washer', hourlyRate: 8}, id: 1},40,{name:'Fred', cashonHand: 39, job:{description: 'Dish washer', hourlyRate: 8}, id: 1}.job.hourlyRate));">Fred's finances.</button>
-
-         <br />
+         <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}.call({name:'Fred', cashonHand: 39, job:{description: 'Dish washer', hourlyRate: 8}, id: 1},40,{name:'Fred', cashonHand: 39, job:{description: 'Dish washer', hourlyRate: 8}, id: 1}.job.hourlyRate));">Fred's finances.</button><br /><br />
      </li><li>
-    <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}.call({name: 'Jane', job: {description:'Oracle Dba', hourlyRate: 76},cashonHand: 57, id:2},40,{name: 'Jane', job: {description:'Oracle Dba', hourlyRate: 76},cashonHand: 57, id:2}.job.hourlyRate));">Jane's finances.</button>
-         <br /></li></ol>
-
-            </li>
-            <li><b>apply</b> - nearly identical to call.  The differrence between call and apply is that call invokes a function passing in comma seperated values to be used as function arguments, while apply accepts an array of arguments and uses them much like an ordinary function call's use of the arguments[] array.
+    <button class="btn-sm btn-primary" onclick="alert(function(hrs,rate){ this.cashonHand+=(hrs*rate); return this.name + ' now has ' + this.cashonHand + ' dollars on hand.';}.call({name: 'Jane', job: {description:'Oracle Dba', hourlyRate: 76},cashonHand: 57, id:2},40,{name: 'Jane', job: {description:'Oracle Dba', hourlyRate: 76},cashonHand: 57, id:2}.job.hourlyRate));">Jane's finances.</button><br /><br />
+    </li></ol>
+</li>
+<li><b>apply</b> - nearly identical to call.  The differrence between call and apply is that call invokes a function passing in comma seperated values to be used as function arguments, while apply accepts an array of arguments and uses them much like an ordinary function call's use of the arguments[] array.
 <pre class="well"><code>function payday(hrs,rate) {
     this.cashonHand+=(hrs*rate)
     this.hoursWorked=this.hoursWorked-hrs;
@@ -181,17 +178,22 @@ var msg2=payday.call(p2,40,p2.hourlyRate);
              f(); //result is 4 (unbound f has no context for 'this' so the global 'this' is used.)
              var fbound=f.bind(bunkerObj);
              fbound()===25; //f is now bound to be called always as if invoked in the context of bunkerObj</code></pre>
-            <br />
-            *TODO*
+            <br /><br />
+          <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Bound function tests</button><br /><br />
          </li>
-         <li><b>Partial functions</b> - 
-         *TODO*
+         <li><b>Partial functions</b> - enables function with pre-specified initial arguments. These arguments (if any) follow the provided this value and are then inserted at the start of the arguments passed to the target function, followed by the arguments passed to the bound function, whenever the bound function is called.
+         <br />
+         Example:
+         <pre class="well"><code>*TODO*</code></pre>
+         <br /><br />
+         <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Function Invocation tests</button>
+
          </li>
      </ul>        
     
     </li>
     
-    <li>
+    <li><br /><br />
         <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Function Invocation tests</button>
     </li>
 </ul>

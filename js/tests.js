@@ -98,10 +98,28 @@ QUnit.test("tests - functions invoked with .apply()", function (assert) {
 
 
 QUnit.module("Function Invocation goodness - [Function].bind(thisArg,[...])")
-QUnit.test("Binding fun", function (assert) {
-    assert.ok(false, "Bound functions *TODO*");
-    assert.ok(false, "Partial functions *TODO*");
+this.someVal=4; // creates a global someVal variable with a value of 4.
+var bunkerObj= {
+    someVal: 25
+    , showVal: function() { return this.someVal; }
+}                             
+var f=bunkerObj.showVal;
+bunkerObj.showVal(); //result is 25
+f(); //result is 4 (unbound f has no context for 'this' so the global 'this' is used.)
+var fbound=f.bind(bunkerObj);
+fbound()===25; //f is now bound to be called always as if invoked in the context of bunkerObj
+
+QUnit.test("Bound functions", function (assert) {
+
+    assert.notOk(f()===25, "Unbound function returns globaly defined value not the intended value!");
+    assert.ok(bunkerObj.showVal()===25,"Function invoked as a method of the object that hosts it will use that object's scope as the 'this' obj.");
+    assert.ok(fbound()===bunkerObj.showVal(),"Bound function to an object's method will perform identical work as performed when invoked directly on the object it is defined in - Success!");
+    
+
 });
+QUnit.test("Partial functions", function(assert) {
+    assert.ok(false, "Partial functions *TODO*");
+})
 
 QUnit.module("Asynchrony - Closures, callbacks, promises...")
 QUnit.test("Closure fun", function (assert) {
