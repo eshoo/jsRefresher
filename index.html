@@ -24,13 +24,13 @@
 <em>Sorting Strings:</em><br />
     <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].sort();</code></pre><br />
     <sub>*requires no compare function at all since string sorting is the default</sub>
-    <a href="qTests.html">Try It</a>
+    
 </li>
 <li>
 <em>Sorting Numbers:</em><br />
 <code><pre class="well">[9,5,2,1,22,40,21,19,10,23].sort(function(a,b) {return a-b;}); </pre></code>
 <sub>*requires a compare function since the values are numeric and cannot be accurately be sorted as strings.</sub>
-<a href="qTests.html">Try It</a>
+
 </li>
 </ol>
 </li>
@@ -41,7 +41,7 @@
 Example: <br>
 <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].reverse()===[ 'Grapes', 'Cherries','Peaches','Pears', 'Apples','Oranges' ]</code></pre>
 <br />
-<a href="qTests.html">Try It</a>
+
 </li>
 </ol>
 </li>
@@ -50,31 +50,75 @@ Example: <br>
 <br />
 <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].shift()==="Oranges"</code></pre>
 <br />
-<a href="qTests.html">Try It</a>
+
 </li>
 <li>
 <b>unshift</b> - adds new elements to the beginning of an array and returns its length:
 <br />
 <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].unshift("Mango","Pineapple")===8</code></pre>
 <br />
-<a href="qTests.html">Try It</a>
+
 </li>
 <li>
 <b>slice</b> - Selects a part of an array, and returns the new array:<br />
 Example: <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].slice(1,3)===["Apples","Pears"]</code></pre>
 <br />
-<a href="qTests.html">Try It</a>
+
 </li>
 <li>
 <b>splice</b> - Adds/Removes elements from an array <br />
 Example: <pre class="well"><code>["Oranges", "Apples","Pears","Peaches","Cherries","Grapes"].splice(2,0,"Lemon","Kiwi")===["Oranges", "Apples","Lemon","Kiwi","Pears","Peaches","Cherries","Grapes"]</code></pre>
-<br /><a href="qTests.html">Try It</a>
+<br />
 </li>
 <li>
 <b>concat</b> - Joins two or more arrays, and returns a copy of the joined arrays as a <em><u>New Array</u></em>.<br />
 Example:
 <pre class="well"><code>["Apples","Pears"].concat(["Peaches","Cherries"])===["Apples","Pears","Peaches","Cherries"]</code></pre>
-<br /><a href="qTests.html">Try It</a></li></ul></li>
+<br /></li></ul></li>
+
+<li>
+<b>More fun w/Arrays -  *TODO*</b>
+<ul>
+<li>
+<b>.forEach</b> -  *TODO*
+<br />
+</li>
+<li>
+<b>map</b> -  *TODO*
+<br />
+</li>
+    <li>
+        <b>reduce</b> -  *TODO*
+        <br />
+    </li>
+    <li>
+        <b>reduceRight</b> -  *TODO*
+        <br />
+    </li>
+    <li>
+        <b>filter</b> -  *TODO*
+        <br />
+    </li>
+    <li>
+        <b>entries - </b> -  *TODO*
+        <br />
+    </li>
+    <li>
+        <b>every - </b> -  *TODO*
+        <br />
+    </li>
+
+    <li>
+        <b>some - </b> -  *TODO*
+        <br />
+    </li>
+    <li>
+        <b>keys</b> -  *TODO*
+        <br />
+    </li>
+
+</ul>
+</li>
 <li>
 <b>Function Invocation</b> - Call, Apply and Bind
 <br />
@@ -178,24 +222,23 @@ var msg2=payday.call(p2,40,p2.hourlyRate);
              f(); //result is 4 (unbound f has no context for 'this' so the global 'this' is used.)
              var fbound=f.bind(bunkerObj);
              fbound()===25; //f is now bound to be called always as if invoked in the context of bunkerObj</code></pre>
-            <br /><br />
-          <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Bound function tests</button><br /><br />
+            <br />
          </li>
          <li><b>Partial functions</b> - enables function with pre-specified initial arguments. These arguments (if any) follow the provided this value and are then inserted at the start of the arguments passed to the target function, followed by the arguments passed to the bound function, whenever the bound function is called.
          <br />
          Example:
          <pre class="well"><code>*TODO*</code></pre>
-         <br /><br />
-         <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Function Invocation tests</button>
-
+         <br />
          </li>
      </ul>        
     
     </li>
-    
-    <li><br /><br />
-        <button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Function Invocation tests</button>
+    <li><b>Prototypal inheritance</b> -  *TODO*
+    <br />
+    Example:
+    <pre class="well"><code>*TODO*</code></pre>
     </li>
+
 </ul>
 </li>
 <li>
@@ -205,63 +248,41 @@ var msg2=payday.call(p2,40,p2.hourlyRate);
 <b>Closures</b> - *TODO*
     <pre class="well"><code>
     </code></pre>
-<br /><a href="qTests.html">Try It</a>
+<br />
 </li>
 <li>
 <b>Callbacks</b> -  *TODO*
-<br /><a href="qTests.html">Try It</a>
+<br />
 </li>
 <li>
 <b>Promises</b> - a promise is a proxy for a value that may not be known at creation time.  *TODO*
-<br /><a href="qTests.html">Try It</a>
+
 </li>
 </ul>
 </li>
 
-<li>
-<b>More fun w/Arrays -  *TODO*</b>
-<ul>
-<li>
-<b>.forEach</b> -  *TODO*
-<br /><a href="qTests.html">Try It</a>
-</li>
-<li>
-<b>map</b> -  *TODO*
-<br /><a href="qTests.html">Try It</a>
-</li>
-    <li>
-        <b>reduce</b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
-    <li>
-        <b>reduceRight</b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
-    <li>
-        <b>filter</b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
-    <li>
-        <b>entries - </b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
-    <li>
-        <b>every - </b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
 
-    <li>
-        <b>some - </b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
-    <li>
-        <b>keys</b> -  *TODO*
-        <br /><a href="qTests.html">Try It</a>
-    </li>
-
-</ul>
+<li><b>Currying</b> -   There is no explicit curry function in javascript so it must be defined when using the technique.
+<br><sub>*I believe this may belong with a special case of function invocation.</sub>
+<br>Example:<br>
+<pre class="well"><code>//There is no explicit curry function in javascript so it must be defined.
+//add curry to the Function prototype
+function toArray(enum) {
+    return Array.prototype.slice.call(enum);
+}
+Function.prototype.curry = function() {
+    if (arguments.length<1) {
+        return this;
+    }
+    var __method=this;
+    var args=toArray(arguments);
+    return function() {
+        return __method.apply(this,args.concat(toArray(arguments)));
+    }
+}
+</code></pre>
 </li>
-<li><b>Prototypal inheritance</b> -  *TODO*</li>
+<li><button onclick="window.location = 'qTests.html';" class="btn-sm btn-primary">Run all tests</button></li>
 </ol>
 </div>
 </div>

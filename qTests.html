@@ -1,16 +1,45 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Javascript Tests</title>
-        <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.19.0.css">
-    </head>
-    <body>
-        <div id="qunit"></div>
-        <div id="qunit-fixture"></div>
-        
-        <script src="js/qUnit.js"></script>
-        <script src="js/tests.js"></script>
-        <script src="js/jquery-1.10.2.js"></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Javascript Refresher</title>
+    <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.19.0.css">
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+
+   
+    <script src="js/qUnit.js"></script>
+    <script src="js/tests.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <!-- promises polyfill -->
+    <script src="//raw.githubusercontent.com/jakearchibald/es6-promise/master/dist/es6-promise.js"></script>
+    <!--
+        verify my understanding of promises with this polyfill: 
+        <button onclick="demoPromise();">Test Promise</button> 
+    -->
+    <script>
+        //
+        function demoPromise() {
+            var promise = new Promise(function (resolve, reject) {
+                var someNum = 0;
+                setTimeout(function () {
+                    try {
+                        someNum++;
+                        resolve("SomeNum is:" + someNum);
+                    } catch (ex) {
+                        reject(ex);
+                    }
+                }, 1000);
+
+            });
+            promise.then(function (res) {
+                alert(res);
+            }, function (err) {
+                alert("ERROR:" + err);
+            });
+        }
+    </script>
+</body>
 </html>
